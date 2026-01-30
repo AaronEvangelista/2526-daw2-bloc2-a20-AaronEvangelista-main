@@ -15,7 +15,7 @@ if (!isset($_SESSION['rol'])) {
                 <hr class="border-info">
 
                 <div class="mb-4">
-                    <img src="../img/fotoPerfil.png"
+                    <img src="../img/perfilFoto.jpg"
                         class="rounded-circle border border-info shadow"
                         alt="Avatar"
                         style="width: 150px; height: 150px; object-fit: cover;">
