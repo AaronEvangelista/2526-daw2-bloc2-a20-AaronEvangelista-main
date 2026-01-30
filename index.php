@@ -3,86 +3,108 @@ session_start();
 include 'includes/header.php';
 ?>
 
-<div class="hero-section text-white d-flex align-items-center" style="position: relative; min-height: 85vh; background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed;">
-
-    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65);"></div>
-
-    <div class="container position-relative" style="z-index: 2;">
-        <div class="row">
-            <div class="col-lg-8">
-                <h1 class="display-1 fw-bold mb-3" style="font-family: 'Oswald', sans-serif; letter-spacing: 2px;">
-                    ENTRENA SIN <span class="text-info" style="color: #00cfd1 !important;">LIMITES</span>
-                </h1>
-                <p class="lead fs-3 mb-5" style="font-family: 'Montserrat', sans-serif; font-weight: 300;">
-                    Bienvenido a GYM Ilernitas. Gestiona tus clases dirigidas y alcanza tus objetivos con los mejores profesionales.
-                </p>
-
-                <div class="card bg-dark bg-opacity-75 border-info p-4 d-inline-block shadow-lg">
-                    <h2 class="h4 text-white" style="font-family: 'Oswald', sans-serif;">Hola, <?php echo isset($_SESSION['nombre']) ? htmlspecialchars($_SESSION['nombre']) : 'Atleta'; ?>!</h2>
-                    <p class="text-light" style="font-family: 'Montserrat', sans-serif;">
-                        Estado: <span class="badge bg-info text-dark"><?php echo isset($_SESSION['rol']) ? strtoupper($_SESSION['rol']) : 'Invitado'; ?></span>
-                    </p>
-
-                    <div class="d-flex gap-3 mt-3">
-                        <a href="pages/verClases.php" class="btn btn-info btn-lg fw-bold px-4">Ver Horarios</a>
-
-                        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin'): ?>
-                            <a href="pages/perfil.php" class="btn btn-outline-warning btn-lg px-4">Panel Control</a>
-                        <?php elseif (!isset($_SESSION['rol'])): ?>
-                            <a href="sessions/login.php" class="btn btn-outline-light btn-lg px-4">Iniciar Sesion</a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<section class="py-5 bg-white text-dark shadow-sm">
+<section class="hero-section text-center text-white d-flex align-items-center" style="min-height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/fondo.jpg'); background-size: cover; background-position: center;">
     <div class="container">
-        <div class="row text-center g-4">
-            <div class="col-6 col-md-3">
-                <div class="p-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/69/69840.png" alt="Icono" width="45" class="mb-3">
-                    <h6 class="fw-bold uppercase" style="font-family: 'Oswald', sans-serif;">Sin Permanencia</h6>
-                    <p class="small text-muted" style="font-family: 'Montserrat', sans-serif;">Libertad total para entrenar cuando quieras.</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="p-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2964/2964514.png" alt="Icono" width="45" class="mb-3">
-                    <h6 class="fw-bold uppercase" style="font-family: 'Oswald', sans-serif;">Zonas de Fuerza</h6>
-                    <p class="small text-muted" style="font-family: 'Montserrat', sans-serif;">Equipamiento de ultima generacion.</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="p-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/84/84145.png" alt="Icono" width="45" class="mb-3">
-                    <h6 class="fw-bold uppercase" style="font-family: 'Oswald', sans-serif;">+100 Clases</h6>
-                    <p class="small text-muted" style="font-family: 'Montserrat', sans-serif;">Yoga, HIIT, Spinning y mucho mas.</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="p-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2784/2784459.png" alt="Icono" width="45" class="mb-3">
-                    <h6 class="fw-bold uppercase" style="font-family: 'Oswald', sans-serif;">Horario Amplio</h6>
-                    <p class="small text-muted" style="font-family: 'Montserrat', sans-serif;">Abrimos todos los dias del año.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        <h1 class="display-2 fw-bold" style="font-family: 'Oswald', sans-serif;">ENTRENA SIN LIMITES</h1>
+        <p class="lead mb-4" style="font-family: 'Montserrat', sans-serif;">El gimnasio mas completo para alcanzar tus objetivos fitness</p>
 
-<section class="py-5 bg-light">
-    <div class="container text-center">
-        <h2 class="display-5 fw-bold mb-4" style="font-family: 'Oswald', sans-serif;">¿LISTO PARA EMPEZAR?</h2>
-        <p class="text-muted mb-4" style="font-family: 'Montserrat', sans-serif;">Unete a la comunidad de Ilernitas y transforma tu cuerpo.</p>
         <?php if (!isset($_SESSION['rol'])): ?>
-            <a href="sessions/registro.php" class="btn btn-dark btn-xl px-5 py-3 fw-bold">REGISTRATE AHORA</a>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <a href="sessions/registro.php" class="btn btn-info btn-lg px-5 py-3 shadow">UNIRSE AHORA</a>
+                <a href="sessions/login.php" class="btn btn-outline-light btn-lg px-5 py-3">INICIAR SESION</a>
+            </div>
+        <?php else: ?>
+            <a href="sessions/perfil.php" class="btn btn-info btn-lg px-5 py-3 shadow">IR A MI PANEL</a>
         <?php endif; ?>
     </div>
 </section>
 
-<?php
-include 'includes/footer.php';
-?>
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="card p-4 h-100 shadow border-info">
+                    <h3 class="text-info">MAQUINARIA</h3>
+                    <p class="text-muted">Equipamiento de ultima generacion para fuerza y cardio</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card p-4 h-100 shadow border-info">
+                    <h3 class="text-info">CLASES</h3>
+                    <p class="text-muted">Yoga, CrossFit, Boxeo y mucho mas con los mejores instructores</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card p-4 h-100 shadow border-info">
+                    <h3 class="text-info">PLANES</h3>
+                    <p class="text-muted">Suscripciones flexibles que se adaptan a tu ritmo de vida</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-black">
+    <div class="container text-center">
+        <h2 class="mb-5" style="color: #fff;">NUESTROS SERVICIOS</h2>
+        <div class="row justify-content-center">
+
+            <?php if (!isset($_SESSION['rol'])): ?>
+                <div class="col-lg-6 mb-4">
+                    <div class="p-5 border border-secondary h-100">
+                        <h4 style="color: #fff;">PLAN BASICO</h4>
+                        <p class="display-4 my-3" style="color: #fff;">29.99€</p>
+                        <ul class="list-unstyled mb-4" style="color: #eee;">
+                            <li>Acceso zona de pesas</li>
+                            <li>Vestuarios y duchas</li>
+                        </ul>
+                        <a href="sessions/registro.php" class="btn btn-outline-info w-100">SELECCIONAR</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="p-5 border border-info h-100">
+                        <h4 class="text-info">PLAN PREMIUM</h4>
+                        <p class="display-4 my-3" style="color: #fff;">49.99€</p>
+                        <ul class="list-unstyled mb-4" style="color: #eee;">
+                            <li>Acceso total 24/7</li>
+                            <li>Todas las clases incluidas</li>
+                        </ul>
+                        <a href="sessions/registro.php" class="btn btn-info w-100">SELECCIONAR</a>
+                    </div>
+                </div>
+
+            <?php elseif ($_SESSION['rol'] === 'user'): ?>
+                <div class="col-lg-10">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="p-5 border border-secondary h-100">
+                                <h3 style="color: #fff;">TUS CLASES BASICAS</h3>
+                                <p style="color: #bbb;">Consulta los horarios de Yoga y Cardio disponibles para tu plan.</p>
+                                <a href="pages/verClases.php" class="btn btn-outline-light w-100">VER HORARIOS</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-5 border border-info h-100" style="background: rgba(0, 207, 209, 0.1);">
+                                <h3 class="text-info">PASA AL SIGUIENTE NIVEL</h3>
+                                <p style="color: #fff;">Desbloquea nuevas clases y mas.</p>
+                                <a href="#" class="btn btn-info w-100">Mejora  a Premiun</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php else: ?>
+                <div class="col-lg-8">
+                    <div class="p-5 border border-info">
+                        <h3 class="text-info">ERES MIEMBRO PREMIUM</h3>
+                        <p style="color: #eee;">Tienes acceso total a todas nuestras instalaciones y clases dirigidas.</p>
+                        <a href="pages/verClases.php" class="btn btn-outline-info">CONSULTAR MIS CLASES</a>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+        </div>
+    </div>
+</section>
+
+<?php include 'includes/footer.php'; ?>

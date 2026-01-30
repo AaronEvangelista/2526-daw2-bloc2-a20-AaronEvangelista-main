@@ -14,11 +14,11 @@ if (!isset($_SESSION['rol'])) {
                 <h3 style="font-family: 'Oswald', sans-serif;">MI PERFIL</h3>
                 <hr class="border-info">
 
-                <!-- para poder tener un avatar una img de perfil -->
                 <div class="mb-4">
-                    <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['nombre']); ?>&background=00cfd1&color=000&size=150&bold=true"
+                    <img src="../img/fotoPerfil.png"
                         class="rounded-circle border border-info shadow"
-                        alt="Avatar">
+                        alt="Avatar"
+                        style="width: 150px; height: 150px; object-fit: cover;">
                 </div>
 
                 <p style="font-family: 'Montserrat', sans-serif;">

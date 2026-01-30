@@ -24,29 +24,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Email o contraseña incorrectos.";
     }
 }
+
+include '../includes/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
+<div class="auth-wrapper">
+    <div class="login-card shadow-lg">
+        <h2>Acceso Miembros</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../styles/style.css">
-    <title>Login - GYM</title>
-</head>
+        <?php if ($error): ?>
+            <div class="alert-error">
+                <?php echo $error; ?>
+            </div>
+        <?php endif; ?>
 
-<body>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <?php if ($error) echo "<p style='color:red'>$error</p>"; ?>
+        <?php if (isset($_GET['registro']) && $_GET['registro'] == 'exito'): ?>
+            <div class="alert alert-success text-center" style="border-radius: 0; background: rgba(40, 167, 69, 0.2); color: #28a745; border: 1px solid #28a745;">
+                ¡Registro completado! Ya puedes entrar.
+            </div>
+        <?php endif; ?>
 
         <form method="POST">
-            <input type="email" name="email" placeholder="Email (admin@gym.com)" required>
-            <input type="password" name="password" placeholder="Contraseña (1234)" required>
-            <button type="submit">Entrar</button>
-        </form>
-        <p><a href="../index.php">Volver al inicio</a></p>
-    </div>
-</body>
+            <div class="form-group">
+                <label>CORREO ELECTRÓNICO</label>
+                <input type="email" name="email" class="custom-input" placeholder="ejemplo@gym.com" required>
+            </div>
 
-</html>
+            <div class="form-group mb-4">
+                <label>CONTRASEÑA</label>
+                <input type="password" name="password" class="custom-input" placeholder=".............." required>
+            </div>
+
+            <button type="submit" class="btn-gym-main shadow">Entrar al Gym</button>
+        </form>
+
+        <div class="auth-footer text-center mt-3">
+            <p>¿No tienes cuenta? <a href="registro.php" class="text-info">Registrate aqui</a></p>
+            <a href="../index.php" class="back-link text-white-50 small">← Volver al inicio</a>
+        </div>
+    </div>
+</div>
+
+<?php include '../includes/footer.php'; ?>
