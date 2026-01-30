@@ -14,7 +14,7 @@ include 'includes/header.php';
                 <a href="sessions/login.php" class="btn btn-outline-light btn-lg px-5 py-3">INICIAR SESION</a>
             </div>
         <?php else: ?>
-            <a href="sessions/perfil.php" class="btn btn-info btn-lg px-5 py-3 shadow">IR A MI PANEL</a>
+            <a href="pages/perfil.php" class="btn btn-info btn-lg px-5 py-3 shadow">IR A MI PANEL</a>
         <?php endif; ?>
     </div>
 </section>
