@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
-                <h4 class="text-info">ILERNITAS GYM</h4>
+                <h4 class="text-info">NOVA GYM</h4>
                 <p class="text-muted small">Tu entrenamiento empieza aqui</p>
             </div>
             <div class="col-md-6 text-center text-md-end">

@@ -11,12 +11,13 @@ $ruta_base = file_exists('styles/style.css') ? "" : "../";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="<?php echo $ruta_base; ?>img/FotoWeb.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="<?php echo $ruta_base; ?>styles/style.css">
 
-    <title>ILERNITAS GYM</title>
+    <title>NOVA GYM</title>
 </head>
 
 <body>
@@ -24,7 +25,7 @@ $ruta_base = file_exists('styles/style.css') ? "" : "../";
     <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand" href="<?php echo $ruta_base; ?>index.php">
-                ILERNITAS <span>GYM</span>
+                NOVA <span>GYM</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
