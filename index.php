@@ -73,7 +73,7 @@ include 'includes/header.php';
                     </div>
                 </div>
 
-            <?php elseif ($_SESSION['rol'] === 'user'): ?>
+            <?php elseif ($_SESSION['rol'] == 'basic' || $_SESSION['rol'] == 'user'): ?>
                 <div class="col-lg-10">
                     <div class="row g-4">
                         <div class="col-md-6">
@@ -87,7 +87,7 @@ include 'includes/header.php';
                             <div class="p-5 border border-info h-100" style="background: rgba(0, 207, 209, 0.1);">
                                 <h3 class="text-info">PASA AL SIGUIENTE NIVEL</h3>
                                 <p style="color: #fff;">Desbloquea nuevas clases y mas.</p>
-                                <a href="#" class="btn btn-info w-100">Mejora  a Premiun</a>
+                                <a href="#" class="btn btn-info w-100">Mejora a Premium</a>
                             </div>
                         </div>
                     </div>

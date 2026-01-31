@@ -55,11 +55,24 @@ $resultado = $db->query("SELECT * FROM clases");
                         </div>
 
                         <div class="mt-auto">
-                            <?php if ($clase['solo_premium'] == 1 && $_SESSION['rol'] == 'user'): ?>
-                                <button class="btn btn-secondary w-100 disabled" style="opacity: 0.5;">SOLO PREMIUM</button>
-                                <p class="text-warning small mt-2 mb-0">Mejora tu plan para entrar</p>
+                            <?php
+                            $es_premium = ($clase['solo_premium'] == 1);
+
+                            $es_basico = ($_SESSION['rol'] == 'basic' || $_SESSION['rol'] == 'user');
+
+                            if ($es_premium && $es_basico):
+                            ?>
+                                <button type="button" class="btn btn-secondary w-100" disabled style="cursor: not-allowed; opacity: 0.6; background-color: #333; border-color: #444;">
+                                    <i class="bi bi-lock-fill"></i> SOLO PREMIUM
+                                </button>
+                                <p class="text-warning small mt-2 mb-0">
+                                    Mejora tu plan para reservar
+                                </p>
+
                             <?php else: ?>
-                                <a href="reservarServicio.php?id=<?php echo $clase['id']; ?>" class="btn btn-info w-100 fw-bold">RESERVAR PLAZA</a>
+                                <a href="guardarReserva.php?id=<?php echo $clase['id']; ?>" class="btn btn-info w-100 fw-bold">
+                                    RESERVAR PLAZA
+                                </a>
                             <?php endif; ?>
                         </div>
                     </div>

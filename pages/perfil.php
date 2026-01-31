@@ -40,9 +40,19 @@ if (!isset($_SESSION['rol'])) {
             <?php if ($_SESSION['rol'] === 'admin'): ?>
                 <div class="card bg-dark text-white p-4 shadow border-secondary" style="border-radius: 0;">
                     <h3 style="font-family: 'Oswald', sans-serif; color: #00cfd1;">PANEL DE ADMIN</h3>
-                    <div class="row mt-4">
+
+                    <div class="row mt-4 mb-3">
+                        <div class="col-12">
+                            <a href="adminUsuarios.php" class="btn btn-outline-info w-100 py-3 fw-bold" style="border-radius: 0; border-width: 2px;">
+                                GESTIONAR USUARIOS (CREAR / BORRAR)
+                            </a>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-2 text-muted" style="font-family: 'Oswald', sans-serif;">GESTION DE CLASES</h5>
+                    <div class="row mt-2">
                         <div class="col-sm-4">
-                            <a href="crearClases.php" class="btn btn-success w-100 py-3 mb-2" style="border-radius: 0;"> Añadir Clase</a>
+                            <a href="crearClases.php" class="btn btn-success w-100 py-3 mb-2" style="border-radius: 0;"> Anadir Clase</a>
                         </div>
                         <div class="col-sm-4">
                             <a href="eliminarClases.php" class="btn btn-danger w-100 py-3 mb-2" style="border-radius: 0;"> Eliminar Clases</a>
@@ -56,7 +66,7 @@ if (!isset($_SESSION['rol'])) {
             <?php elseif ($_SESSION['rol'] === 'profe'): ?>
                 <div class="card bg-dark text-white p-4 shadow border-secondary" style="border-radius: 0;">
                     <h3 style="font-family: 'Oswald', sans-serif; color: #00cfd1;">GESTION DE MIS CLASES</h3>
-                    <p class="text-white-50">Actulizar los horarios de clases</p>
+                    <p class="text-white-50">Actualizar los horarios de clases</p>
 
                     <div class="table-responsive">
                         <table class="table table-dark table-hover border-secondary">
@@ -64,7 +74,7 @@ if (!isset($_SESSION['rol'])) {
                                 <tr class="text-info">
                                     <th>Clase</th>
                                     <th>Horario Actual</th>
-                                    <th>Acción</th>
+                                    <th>Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,9 +118,9 @@ if (!isset($_SESSION['rol'])) {
                     <?php
                     $id_user = $_SESSION['id'];
                     $sql_reservas = "SELECT r.id as id_reserva, c.nombre, c.dia_semana, c.hora_inicio 
-                                         FROM reservas r 
-                                         JOIN clases c ON r.id_clase = c.id 
-                                         WHERE r.id_usuario = $id_user";
+                                     FROM reservas r 
+                                     JOIN clases c ON r.id_clase = c.id 
+                                     WHERE r.id_usuario = $id_user";
                     $res_reservas = $db->query($sql_reservas);
                     $hay_reservas = false;
                     ?>
@@ -130,7 +140,7 @@ if (!isset($_SESSION['rol'])) {
                     </ul>
 
                     <?php if (!$hay_reservas): ?>
-                        <p class="text-muted mt-3">Aún no tienes reservas activas.</p>
+                        <p class="text-muted mt-3">Aun no tienes reservas activas.</p>
                         <a href="verClases.php" class="btn btn-info py-3 mt-2" style="border-radius: 0; font-family: 'Oswald', sans-serif;">VER HORARIOS PARA RESERVAR</a>
                     <?php endif; ?>
                 </div>
