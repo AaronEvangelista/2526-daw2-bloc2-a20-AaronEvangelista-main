@@ -94,24 +94,6 @@ h1, h2, h3, h4, .navbar-brand {
     box-shadow: 0 0 15px rgba(0, 207, 209, 0.5);
 }
 
-footer {
-    background-color: #000000 !important;
-    border-top: 1px solid #333 !important;
-    color: #ffffff !important;
-    flex-shrink: 0; 
-    padding: 20px 0;
-    margin-top: 40px; 
-}
-
-footer h4 {
-    color: #00cfd1 !important;
-}
-
-footer p, footer span {
-    color: #ffffff !important; 
-    opacity: 0.8;
-}
-
 .auth-wrapper {
     flex: 1 0 auto; 
     display: flex;
@@ -216,6 +198,86 @@ footer p, footer span {
 .rounded-circle {
     border-width: 4px !important;
     border-color: #00cfd1 !important;
+}
+
+footer, .footer-premium {
+    background-color: #050505 !important;
+    border-top: 1px solid #333;
+    color: #ffffff;
+    flex-shrink: 0; 
+    padding-top: 60px; 
+    padding-bottom: 30px;
+    margin-top: 50px; 
+}
+
+.footer-brand {
+    font-family: "Oswald", sans-serif;
+    color: #00cfd1;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.footer-heading {
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.footer-text {
+    color: #a0a0a0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    color: #888 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.footer-link:hover {
+    color: #00cfd1 !important;
+    padding-left: 10px;
+}
+
+.social-icon-btn {
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff !important;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.2rem;
+}
+
+.social-icon-btn:hover {
+    background-color: #00cfd1;
+    border-color: #00cfd1;
+    color: #000 !important;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 20px rgba(0, 207, 209, 0.4);
+}
+
+.footer-divider {
+    border-color: #333;
+    opacity: 0.5;
+    margin: 40px 0;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
